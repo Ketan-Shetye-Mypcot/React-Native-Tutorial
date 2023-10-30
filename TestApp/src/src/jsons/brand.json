@@ -1,0 +1,27 @@
+[
+      {
+        "id": 1,
+        "brandby":"Britania",
+        "isChecked":false
+      },
+      {
+        "id": 2,
+        "brandby":"Oreo",
+        "isChecked":false
+      },
+      {
+        "id": 3,
+        "brandby":"Quality Walls",
+        "isChecked":false
+      },
+      {
+        "id": 4,
+        "brandby":"Sunfeast",
+        "isChecked":false
+      },
+      {
+        "id": 5,
+        "brandby":"Parle",
+        "isChecked":false
+      }
+]
