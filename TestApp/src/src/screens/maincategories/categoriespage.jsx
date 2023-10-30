@@ -10,7 +10,7 @@ const CategoryPage = (props)=>{
     const onCategoryPress =(categoryName,categoryId)=>{
         ROUTE_DATA.setHeaderName(categoryName)
         ROUTE_DATA.setNotShow()
-        props.navigation.navigate('CategoryItem',{categoryId:categoryId})
+        props.navigation.navigate('CategoryItem',{categoryId:categoryId,navigatedFrom:'CategoryPage'})
     }
     return(
         <View style={{flex:1,backgroundColor:'white'}}>

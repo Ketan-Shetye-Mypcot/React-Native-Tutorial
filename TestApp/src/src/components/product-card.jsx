@@ -41,24 +41,24 @@ const ProductComponent = (props)=>{
                     <Text>{props.productWt}</Text>
                 </View>
             </View>
-            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',}}>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:'100%',height:'auto'}}>
                 <View>
                     <View>
-                        <Text style={{textDecorationLine:'line-through',fontWeight:'bold'}}>{props.productPrice}</Text>
+                        <Text style={{textDecorationLine:'line-through',fontWeight:'bold',fontSize:12}}>{props.productPrice}</Text>
                     </View>
                     <View>
-                        <Text style={{fontWeight:'bold'}}>{props.productOfferPrice}</Text>
+                        <Text style={{fontWeight:'bold',fontSize:12}}>{props.productOfferPrice}</Text>
                     </View>
                 </View>
                 {
                     showCart ?
-                    <Pressable style={{backgroundColor:'#FEFAF2',borderColor:'#EBA500',borderRadius:8,borderWidth:0.8,alignItems:'center',width:'30%',marginBottom:1}} onPress={()=>setShowCart(false)}>
-                        <Image source={require('../assets/dealOfDayImages/dealcart.png')} style={{marginVertical:4}}/>
+                    <Pressable style={{backgroundColor:'#FEFAF2',borderColor:'#EBA500',borderRadius:8,borderWidth:0.8,alignItems:'center',width:'30%',marginBottom:1,height:'100%',alignItems:'center'}} onPress={()=>setShowCart(false)}>
+                        <Image source={require('../assets/dealOfDayImages/dealcart.png')}  style={{marginTop:2}} />
                     </Pressable> :
-                    <View style={{flexDirection:'row',justifyContent:'space-evenly',backgroundColor:'#F3F3F3',alignItems:'center',columnGap:10,borderRadius:8,paddingHorizontal:5,paddingVertical:8}}>
-                        <View><Pressable onPress={()=>decQty()}><Image source={require('../assets/minus.png')} style={{backgroundColor:'white',width:15,height:15}}/></Pressable></View>
-                        <View><Text style={{fontWeight:'bold',fontSize:18}}>{qty}</Text></View>
-                        <View><Pressable onPress={()=>incQty()}><Image source={require('../assets/add.png')} style={{backgroundColor:'white',width:15,height:15}}/></Pressable></View>
+                    <View style={{flexDirection:'row',justifyContent:'space-evenly',backgroundColor:'#F3F3F3',alignItems:'center',columnGap:10,borderRadius:8,paddingHorizontal:4,paddingVertical:6}}>
+                        <View><Pressable onPress={()=>decQty()}><Image source={require('../assets/minus.png')} style={{backgroundColor:'white',width:14,height:14}}/></Pressable></View>
+                        <View><Text style={{fontWeight:'bold',fontSize:16}}>{qty}</Text></View>
+                        <View><Pressable onPress={()=>incQty()}><Image source={require('../assets/add.png')} style={{backgroundColor:'white',width:14,height:14}}/></Pressable></View>
                     </View>
                 }
             </View>

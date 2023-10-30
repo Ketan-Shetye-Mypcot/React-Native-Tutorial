@@ -13,7 +13,7 @@ const MainHome = (props)=>{
     const data = props.route.params
     const onCategoryPress=(CategoryName)=>{
         data.setNotShow()
-        props.navigation.navigate("CategoryItem",{CategoryName:CategoryName})
+        props.navigation.navigate("CategoryItem",{CategoryName:CategoryName,navigatedFrom:'MainHome'})
     }
     return(
         <View style={{flex:1,backgroundColor:'white'}}>

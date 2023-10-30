@@ -6,14 +6,18 @@ import TextBox from './textbox'
 const Brand=()=>{
     const BrandList = require('../jsons/brand.json')
     const [name,setName] = useState('')
-    const [curCheckId,setCurCheckId]= useState(0)
+    const [curCheckId,setCurCheckId]= useState(-1)
     const onCheckBoxPress=(CheckBoxId)=>{
         if(BrandList[CheckBoxId-1].isChecked){
             BrandList[CheckBoxId-1].isChecked=false
         }else{
             BrandList[CheckBoxId-1].isChecked=true
         }
-        setCurCheckId(CheckBoxId)
+        if(curCheckId==CheckBoxId){
+            setCurCheckId(-1)
+        }else{
+            setCurCheckId(CheckBoxId)
+        }
     }
     useEffect(()=>{
         

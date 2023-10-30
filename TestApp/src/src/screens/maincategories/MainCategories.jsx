@@ -11,6 +11,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainCategories = (props)=>{
+    const [fromCategory,setFromCategory] = useState(false)
     const [categoryItemHeaderTitle,setCategoryItemHeaderTitle] = useState('Categories')
     const setTitle = (categoryName)=>{
         setCategoryItemHeaderTitle(categoryName)
@@ -28,7 +29,7 @@ const MainCategories = (props)=>{
             <Tab.Screen 
             name='CategoryPage' 
             component={CategoryPage}
-            initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,setHeaderName:setTitle}}
+            initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,setHeaderName:setTitle,fromCategory:fromCategory}}
             options={{
                 headerTitle:()=><Header headerTitle='Categories' isBottomTabNavigationPage={true}/>,
                 tabBarStyle : {display:'none'},
@@ -47,7 +48,7 @@ const MainCategories = (props)=>{
             <Tab.Screen 
             name='CategoryItem' 
             component={CategoryItems}
-            initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,setHeaderName:setTitle}}
+            initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,setHeaderName:setTitle,fromCategory:fromCategory}}
             options={{
                 tabBarStyle : {display:'none'},
                 headerTitle:()=><Header headerTitle={categoryItemHeaderTitle} isCategoryItemPage={true} onPress={goToCategoryHomePage}/>,
