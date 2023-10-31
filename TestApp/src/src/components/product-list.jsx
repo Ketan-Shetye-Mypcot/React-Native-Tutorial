@@ -36,6 +36,7 @@ const ProductList=(props)=>{
                     productPrice='EGP 199.45'
                     productOfferPrice='EGP 99.45'
                     isCart={true}
+                    onPress={props.onPress}
                     />
                     }
                 keyExtractor={item=>item.id}

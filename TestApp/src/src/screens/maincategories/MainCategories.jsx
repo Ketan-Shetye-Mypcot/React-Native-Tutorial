@@ -25,7 +25,7 @@ const MainCategories = (props)=>{
         'Non-serializable values were found in the navigation state',
       ])
     return(
-        <Tab.Navigator >
+        <Tab.Navigator>
             <Tab.Screen 
             name='CategoryPage' 
             component={CategoryPage}

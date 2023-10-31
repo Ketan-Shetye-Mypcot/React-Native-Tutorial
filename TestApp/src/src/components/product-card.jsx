@@ -5,6 +5,7 @@ const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const ProductComponent = (props)=>{
     const[ showCart,setShowCart] = useState(true)
+
     
 
     const [qty,setQty] = useState(0)
@@ -19,7 +20,9 @@ const ProductComponent = (props)=>{
         }
     }
     return(
-        <View style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',shadowColor: '#EBA500',elevation:20,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3}}>
+        <Pressable 
+        style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',shadowColor: '#EBA500',elevation:20,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3}} 
+        onPress={()=>props.onPress(props.image,props.productName,props.productPrice,props.productOfferPrice,props.percentOff)}>
             {
                 props.isOfferOnProduct ?
                 <View style={{width:'40%',overflow:'hidden'}}>
@@ -52,10 +55,10 @@ const ProductComponent = (props)=>{
                 </View>
                 {
                     showCart ?
-                    <Pressable style={{backgroundColor:'#FEFAF2',borderColor:'#EBA500',borderRadius:8,borderWidth:0.8,alignItems:'center',width:'30%',marginBottom:1,height:'100%',alignItems:'center'}} onPress={()=>setShowCart(false)}>
-                        <Image source={require('../assets/dealOfDayImages/dealcart.png')}  style={{marginTop:2}} />
+                    <Pressable style={{backgroundColor:'#FEFAF2',borderColor:'#EBA500',borderRadius:8,borderWidth:0.8}} onPress={()=>setShowCart(false)}>
+                        <Image source={require('../assets/dealOfDayImages/dealcart.png')} style={{width:25,height:25,margin:5}} resizeMode="cover"/>
                     </Pressable> :
-                    <View style={{flexDirection:'row',justifyContent:'space-evenly',backgroundColor:'#F3F3F3',alignItems:'center',columnGap:10,borderRadius:8,paddingHorizontal:4,paddingVertical:6}}>
+                    <View style={{flexDirection:'row',justifyContent:'space-evenly',backgroundColor:'#F3F3F3',alignItems:'center',columnGap:10,borderRadius:6,paddingHorizontal:4,paddingVertical:4}}>
                         <View><Pressable onPress={()=>decQty()}><Image source={require('../assets/minus.png')} style={{backgroundColor:'white',width:14,height:14}}/></Pressable></View>
                         <View><Text style={{fontWeight:'bold',fontSize:16}}>{qty}</Text></View>
                         <View><Pressable onPress={()=>incQty()}><Image source={require('../assets/add.png')} style={{backgroundColor:'white',width:14,height:14}}/></Pressable></View>
@@ -63,7 +66,7 @@ const ProductComponent = (props)=>{
                 }
             </View>
             </View>
-        </View>
+        </Pressable>
     )
 }
 

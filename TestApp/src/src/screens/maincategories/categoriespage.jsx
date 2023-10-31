@@ -8,10 +8,9 @@ import CategoryComponent from '../../components/category-card'
 const CategoryPage = (props)=>{
     const ROUTE_DATA= props.route.params
     const onCategoryPress =(categoryName,categoryId)=>{
-        ROUTE_DATA.setHeaderName(categoryName)
-        ROUTE_DATA.setNotShow()
-        props.navigation.navigate('CategoryItem',{categoryId:categoryId,navigatedFrom:'CategoryPage'})
+        props.navigation.navigate('CategoryItems')
     }
+    
     return(
         <View style={{flex:1,backgroundColor:'white'}}>
             <FlatList

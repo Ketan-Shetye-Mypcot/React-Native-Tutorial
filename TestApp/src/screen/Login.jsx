@@ -50,7 +50,7 @@ const Login = (props)=>{
         // }else{
         //     console.warn('unable to login')
         // }
-        props.navigation.navigate("MainStack")
+        props.navigation.navigate('BottomTabStack', {screen: 'Home'});
     }
 
     const onPressToggle = ()=>{

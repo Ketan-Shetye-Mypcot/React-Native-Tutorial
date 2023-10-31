@@ -28,7 +28,6 @@ const MainHomeStack = (props)=>{
             <Tab.Screen name='MainHome' component={MainHome}  initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,fromMainHome:fromMainHome}}
             options={{
                 headerShown:true,
-                tabBarStyle : {display:'none'},
                 headerTitle:()=><Header headerTitle='Trolleey' isBottomTabNavigationPage={true}/>,
                 headerStyle:{
                     height:150,
@@ -44,7 +43,6 @@ const MainHomeStack = (props)=>{
             <Tab.Screen name='CategoryItem' component={CategoryItems} initialParams={{setShow:data.setShow,setNotShow:data.setNotShow,fromMainHome:fromMainHome}}
             options={{
                 headerShown:true,
-                tabBarStyle : {display:'none'},
                 headerTitle:()=><Header headerTitle={categoryItemHeaderTitle} isCategoryItemPage={true} onPress={goToCategoryHomePage}/>,
                 headerStyle:{
                     height:150,

@@ -1,4 +1,4 @@
-import { View, StyleSheet, ScrollView,Text,FlatList } from 'react-native'
+import { View, StyleSheet, ScrollView,Text,FlatList,BackHandler } from 'react-native'
 import NewsLetter from '../../components/newsletter'
 import HomeListComponents from '../../components/homelist'
 import { CategoryLsit } from '../../jsons/categoryList'
@@ -7,14 +7,20 @@ import { CarauselImages } from '../../jsons/carausel'
 import CategoryItem from '../../components/category-item-card'
 import ProductList from '../../components/product-list'
 import { DealOfDayList } from '../../jsons/dealOfDayList'
+import { useEffect } from 'react'
 
 
 const MainHome = (props)=>{
     const data = props.route.params
     const onCategoryPress=(CategoryName)=>{
-        data.setNotShow()
-        props.navigation.navigate("CategoryItem",{CategoryName:CategoryName,navigatedFrom:'MainHome'})
+        props.navigation.navigate("CategoryItems")
     }
+    const onProductCardPress=(productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent)=>{
+        props.navigation.navigate("ProductCardDetails",{params:{productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent}})
+    }
+
+
+    
     return(
         <View style={{flex:1,backgroundColor:'white'}}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -37,12 +43,14 @@ const MainHome = (props)=>{
                 text='Deal Of The Day'
                 image={require('../../assets/dealOfDayImages/Fire.png')}
                 data={DealOfDayList}
+                onPress={onProductCardPress}
                 />
                 <Carausel data={CarauselImages}/>
                 <ProductList
                 text='New Products'
                 image={require('../../assets/dealOfDayImages/Fire.png')}
                 data={DealOfDayList}
+                onPress={onProductCardPress}
                 />
                 <NewsLetter/>
             </ScrollView>

@@ -31,18 +31,18 @@ const Header = (props)=>{
             }
             {
                 props.isCategoryItemPage?
-                <View style={[styles.mainHeaderContainer,{rowGap:20}]}>
-                <View style={styles.headerTextLanguageChangeContainer}>
-                    <View style={{width:'30%'}}>
-                        <Pressable style={styles.stylePressable} onPress={()=>props.onPress()}>
-                            <Image source={require('../assets/ArrowLeft.png')} style={styles.pressableImg}/>
+                <View style={{width:'100%',justifyContent:'center',rowGap:20,height:150}}>
+                <View style={{width:'100%',flexDirection:'row'}}>
+                    <View style={{width:'30%',justifyContent:'center'}}>
+                        <Pressable onPress={()=>props.onPress()} >
+                            <Image source={require('../assets/ArrowLeft.png')} />
                         </Pressable>
                     </View>
                     <View style={{width:'70%'}}>
-                        <Text style={styles.headerText}>{props.headerTitle.toUpperCase()}</Text>
+                        <Text style={{fontWeight:'bold',fontSize:25,fontStyle:'italic'}}>{props.headerTitle.toUpperCase()}</Text>
                     </View>
                 </View>
-                <View style={styles.searchTextBoxContainer}>
+                <View style={{width:width,paddingRight:'8%'}}>
                     <TextBox value={name} onChangeText={setName} isSearchBox={true} placeholder='search here'/>
                 </View>
                 </View> :

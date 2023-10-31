@@ -4,16 +4,15 @@ const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const CategoryComponent = (props)=>{
     return(
-        <View style={{backgroundColor:'#FEFCF5',width:(WINDOW_WIDTH*28)/100,height:(WINDOW_HEIGHT*17)/100,borderRadius:12,overflow:'hidden',marginRight:20}}>
-            <Pressable onPress={()=>props.onPressCategory(props.text,props.id)} style={{rowGap:20}}>
+        <Pressable style={{backgroundColor:'#FEFCF5',width:(WINDOW_WIDTH*28)/100,height:(WINDOW_HEIGHT*18)/100,borderRadius:8,justifyContent:'space-between',marginRight:20}} onPress={()=>props.onPressCategory(props.text,props.id)}>
+            
                 <View style={{padding:8}}>
-                    <Text style={{fontSize:20,fontWeight:'bold'}}>{props.text}</Text>
+                    <Text style={{fontSize:16,fontWeight:500,textTransform:'capitalize'}}>{props.text}</Text>
                 </View>
-                <View style={{width:'100%',overflow:'hidden'}}>
-                    <Image source={props.image} resizeMode='cover'/>
+                <View>
+                    <Image source={props.image} resizeMode="contain" style={{width:'100%',overflow:'hidden',height:90,borderBottomLeftRadius:8,borderBottomRightRadius:8}}/>
                 </View>
-            </Pressable>
-        </View>
+        </Pressable>
     )
 }
 

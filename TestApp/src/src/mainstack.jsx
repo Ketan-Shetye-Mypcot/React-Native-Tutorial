@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import {useState,useEffect} from 'react'
+import { StyleSheet, Text, View, Dimensions,BackHandler } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainHome from './screens/mainhome/MainHome';
 import MainCategories from './screens/maincategories/MainCategories';
@@ -20,6 +20,19 @@ const MainStack = ()=>{
   const setNotShow = ()=>{
     setShowTabBarInCategory(false)
   }
+//   useEffect(()=>{
+//     const backAction = () => {
+//         null
+//         return true;
+//       };
+  
+//       const backHandler = BackHandler.addEventListener(
+//         'hardwareBackPress',
+//         backAction,
+//       );
+  
+//       return () => backHandler.remove();
+// },[])
     return(
         <Tab.Navigator
         screenOptions={({ route }) => ({

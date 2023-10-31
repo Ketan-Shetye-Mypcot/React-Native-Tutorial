@@ -15,39 +15,11 @@ const CategoryItems = (props)=>{
     const onCategoryItemPress=(id)=>{
         setHighlightCategory(id)
     }
-    
-    const onHardwareBackButtonPress=()=>{
-        if(ROUTE_DATA.navigatedFrom == 'MainHome'){
-            props.navigation.navigate('MainHome')
-        }else if(ROUTE_DATA.navigatedFrom == 'CategoryPage'){
-            props.navigation.navigate('CategoryPage')
-        }
-        ROUTE_DATA.setShow()
-    }
 
-    useEffect(()=>{
-        const backAction = () => {
-            Alert.alert('Hold on!', 'Are you sure you want to go back?', [
-              {
-                text: 'Cancel',
-                onPress: () => null,
-                style: 'cancel',
-              },
-              {
-                text: 'YES', 
-                onPress: () => onHardwareBackButtonPress()
-            },
-            ]);
-            return true;
-          };
-      
-          const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            backAction,
-          );
-      
-          return () => backHandler.remove();
-    },[])
+    const onProductCardPress=(productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent)=>{
+        props.navigation.navigate("ProductCardDetails",{params:{productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent}})
+    }
+    
     return(
         <View style={{flex:1,flexDirection:'row'}}>
             <View style={{width:(WINDOW_WIDTH*20)/100,height:'100%',elevation:40}}>
@@ -85,6 +57,7 @@ const CategoryItems = (props)=>{
                     productWt='500mg'
                     productPrice='EGP 199.45'
                     productOfferPrice='EGP 99.45'
+                    onPress={onProductCardPress}
                     />
                     }
                 keyExtractor={item=>item.id}
