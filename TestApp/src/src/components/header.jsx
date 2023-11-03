@@ -48,6 +48,22 @@ const Header = (props)=>{
                 </View> :
                 null
             }
+            {
+                props.isProductCardDetails?
+                <View style={{width:'100%',justifyContent:'center',rowGap:20,height:50}}>
+                <View style={{width:'100%',flexDirection:'row'}}>
+                    <View style={{width:'30%',justifyContent:'center'}}>
+                        <Pressable onPress={()=>props.onPress()} >
+                            <Image source={require('../assets/ArrowLeft.png')} />
+                        </Pressable>
+                    </View>
+                    <View style={{width:'70%'}}>
+                        <Text style={{fontWeight:'bold',fontSize:25,fontStyle:'italic',color:'black',textTransform:'capitalize'}}>{props.headerTitle}</Text>
+                    </View>
+                </View>
+                </View> :
+                null
+            }
         </View>
         
     )

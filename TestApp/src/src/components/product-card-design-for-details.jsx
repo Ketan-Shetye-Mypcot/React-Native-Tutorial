@@ -3,7 +3,7 @@ import {useState} from 'react'
 const WINDOW_WIDTH= Dimensions.get('window').width
 const WINDOW_HEIGHT = Dimensions.get('window').height
 
-const ProductComponent = (props)=>{
+const ProductDetailsCard = (props)=>{
     const[ showCart,setShowCart] = useState(true)
 
     
@@ -21,7 +21,7 @@ const ProductComponent = (props)=>{
     }
     return(
         <Pressable 
-        style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',shadowColor: '#EBA500',elevation:20,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3}} 
+        style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',elevation:10,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3}} 
         onPress={()=>props.onPress(props.image,props.productName,props.productPrice,props.productOfferPrice,props.percentOff)}>
             {
                 props.isOfferOnProduct ?
@@ -70,5 +70,5 @@ const ProductComponent = (props)=>{
     )
 }
 
-export default ProductComponent;
+export default ProductDetailsCard;
 

@@ -1,17 +1,18 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Dimensions} from 'react-native'
-
 import Header from '../src/components/header';
 import MainHome from '../src/screens/mainhome/MainHome';
 import MainCart from '../src/screens/maincart/MainCart';
 import MainProfile from '../src/screens/mainprofile/MainProfile';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CategoryPage from '../src/screens/maincategories/categoriespage';
+import { useState } from 'react';
 
 const Tab = createBottomTabNavigator();
 const height = Dimensions.get('window').height
 
 const BottomTabStack=(props)=>{
+    
     return(
     <Tab.Navigator 
     screenOptions={({ route }) => ({
@@ -81,7 +82,11 @@ const BottomTabStack=(props)=>{
             }
             }}
         />
-        <Tab.Screen name='Cart' component={MainCart}/>
+        <Tab.Screen name='Cart' component={MainCart}
+        options={{
+          tabBarStyle:{display:'none'},
+          headerShown:false
+        }}/>
         <Tab.Screen name='Profile' component={MainProfile}/>
     </Tab.Navigator>
     )
