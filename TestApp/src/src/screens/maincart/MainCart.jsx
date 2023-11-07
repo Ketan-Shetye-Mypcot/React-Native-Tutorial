@@ -50,77 +50,86 @@ const MainCart = (props)=>{
                         </View>
                     </View>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:(WINDOW_HEIGHT*10)/100,marginTop:(WINDOW_HEIGHT*15)/100,backgroundColor:'#F6F7F2'}}>
-            <View style={{backgroundColor:'white',margin:'2%',padding:'2%',rowGap:15, borderRadius:18}}>
+            <ScrollView showsVerticalScrollIndicator={false} >
+                <View style={{marginBottom:(WINDOW_HEIGHT*14)/100,marginTop:(WINDOW_HEIGHT*18)/100,backgroundColor:'#F6F7F2',rowGap:18}}>
+            <View style={{backgroundColor:'white',width:(WINDOW_WIDTH*93)/100,padding:'4%',rowGap:15, borderRadius:18,alignSelf:'center'}}>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View><Text style={{fontWeight:'bold',fontSize:20,color:'black'}}>CheckOut</Text></View>
-                    <View><Text style={{color:'black',fontSize:16}}>Total Items - 1</Text></View>
+                    <View><Text style={{fontSize:22,color:'black',fontFamily:'HindMadurai-Bold'}}>CheckOut</Text></View>
+                    <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{color:'black',fontSize:16}}>Total Items - 1</Text></View>
                 </View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View style={{flexDirection:'row',columnGap:10}}>
-                    <View style={{width:80,height:80,borderRadius:12,borderColor:'#FFEBBB',borderWidth:1,backgroundColor:'#FFFAEE'}}>
+                    <View style={{flexDirection:'row',columnGap:5}}>
+                    <View style={{width:(WINDOW_WIDTH*15)/100,height:(WINDOW_HEIGHT*8)/100,borderRadius:12,borderColor:'#FFEBBB',borderWidth:1,backgroundColor:'#FFFAEE',justifyContent:'center',alignItems:'center'}}>
                         <View style={{position:'absolute',top:-7,left:-7,width:20,height:20,borderRadius:10}}>
-                            <Image source={require('../../assets/RedCross.png')} style={{width:'100%',height:'100%'}}/>
+                            <Image source={require('../../assets/RedCross.png')} style={{width:'100%', height:'100%'}} />
                         </View>
-                        <Image  source={require('../../assets/dealOfDayImages/carrots.png')} style={{width:'100%',height:'100%'}}/>
+                        <View style={{width:'100%',height:'100%',justifyContent:'center',alignItems:'center'}}>
+                        <Image  source={require('../../assets/dealOfDayImages/carrots.png')} resizeMode='contain' style={{width:'100%',height:'100%'}}/>
+                        </View>
                     </View>
-                    <View style={{rowGap:5}}>
-                        <View><Text style={{color:'black',fontWeight:'bold',fontSize:18,opacity:0.8}}>Orange Carrot</Text></View>
-                        <View><Text>6 pcs  (Approx 1.2kg)</Text></View>
-                        <View style={{flexDirection:'row',columnGap:10,justifyContent:'center',alignItems:'center'}}>
-                            <View><Text style={{textDecorationLine:'line-through'}}>EGP 199.45</Text></View>
-                            <View style={{flexDirection:'row',columnGap:5,justifyContent:'center',alignItems:'center'}}>
-                                <View><Text style={{color:'black'}}>EGP</Text></View>
-                                <View><Text style={{color:'black',fontWeight:'bold',fontSize:18}}>99.45</Text></View>
+                    <View style={{justifyContent:'space-around'}}>
+                        <View style={{justifyContent:'space-around'}}>
+                        <View><Text style={{color:'black',fontSize:16,fontFamily:'HindMadurai-Medium'}}>Orange Carrot</Text></View>
+                        <View><Text style={{fontSize:13,fontFamily:'HindMadurai-Regular'}}>6 pcs  (Approx 1.2kg)</Text></View>
+                        </View>
+                        <View style={{flexDirection:'row',columnGap:5,justifyContent:'flex-end'}}>
+                            <View style={{justifyContent:'flex-end'}}><Text style={{textDecorationLine:'line-through',fontSize:13,fontFamily:'HindMadurai-Regular',paddingBottom:2}}>EGP 199.45</Text></View>
+                            <View style={{flexDirection:'row',columnGap:2,justifyContent:'flex-end'}}>
+                                <View style={{justifyContent:'flex-end'}}><Text style={{color:'black',fontSize:13,fontFamily:'HindMadurai-Regular',paddingBottom:2}}>EGP</Text></View>
+                                <View style={{justifyContent:'flex-end'}}><Text style={{color:'black',fontSize:18,fontFamily:'HindMadurai-SemiBold'}}>9999.45</Text></View>
                             </View>
                         </View>
                     </View>
                     </View>
-                    <View style={{justifyContent:'flex-end',width:70}}>
+                    <View style={{justifyContent:'flex-end',width:80}}>
                         <Pressable style={{flexDirection:'row',backgroundColor:'#F3F3F3',justifyContent:'space-evenly',alignItems:'center',borderRadius:4,height:30}}>
                             <View><Pressable style={{backgroundColor:'white'}}><Image source={require('../../assets/minus.png')} /></Pressable></View>
-                            <View><Text style={{fontWeight:'bold',fontSize:18,color:'black'}}>1</Text></View>
+                            <View><Text style={{fontSize:17,color:'black',fontFamily:'HindMadurai-bold',fontWeight:700}}>1</Text></View>
                             <View><Pressable style={{backgroundColor:'white'}}><Image source={require('../../assets/add.png')}/></Pressable></View>
                         </Pressable>
                     </View>
                 </View>
                 <View style={{width:'100%',borderWidth:1,borderColor:'#DFDFDF'}}></View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View style={{flexDirection:'row',columnGap:10}}>
-                    <View style={{width:80,height:80,borderRadius:12,borderColor:'#FFEBBB',borderWidth:1,backgroundColor:'#FFFAEE'}}>
+                    <View style={{flexDirection:'row',columnGap:5}}>
+                    <View style={{width:(WINDOW_WIDTH*15)/100,height:(WINDOW_HEIGHT*8)/100,borderRadius:12,borderColor:'#FFEBBB',borderWidth:1,backgroundColor:'#FFFAEE',justifyContent:'center',alignItems:'center'}}>
                         <View style={{position:'absolute',top:-7,left:-7,width:20,height:20,borderRadius:10}}>
-                            <Image source={require('../../assets/RedCross.png')} style={{width:'100%',height:'100%'}}/>
+                            <Image source={require('../../assets/RedCross.png')} style={{width:'100%', height:'100%'}} />
                         </View>
-                        <Image  source={require('../../assets/dealOfDayImages/carrots.png')} style={{width:'100%',height:'100%'}}/>
+                        <View style={{width:'100%',height:'100%',justifyContent:'center',alignItems:'center'}}>
+                        <Image  source={require('../../assets/dealOfDayImages/carrots.png')} resizeMode='contain' style={{width:'100%',height:'100%'}}/>
+                        </View>
                     </View>
-                    <View style={{rowGap:5}}>
-                        <View><Text style={{color:'black',fontWeight:'bold',fontSize:18,opacity:0.8}}>Orange Carrot</Text></View>
-                        <View><Text>6 pcs  (Approx 1.2kg)</Text></View>
-                        <View style={{flexDirection:'row',columnGap:10,justifyContent:'center',alignItems:'center'}}>
-                            <View><Text style={{textDecorationLine:'line-through'}}>EGP 199.45</Text></View>
-                            <View style={{flexDirection:'row',columnGap:5,justifyContent:'center',alignItems:'center'}}>
-                                <View><Text style={{color:'black'}}>EGP</Text></View>
-                                <View><Text style={{color:'black',fontWeight:'bold',fontSize:18}}>99.45</Text></View>
+                    <View style={{justifyContent:'space-around'}}>
+                        <View style={{justifyContent:'space-around'}}>
+                        <View><Text style={{color:'black',fontSize:16,fontFamily:'HindMadurai-Medium'}}>Orange Carrot</Text></View>
+                        <View><Text style={{fontSize:13,fontFamily:'HindMadurai-Regular'}}>6 pcs  (Approx 1.2kg)</Text></View>
+                        </View>
+                        <View style={{flexDirection:'row',columnGap:5,justifyContent:'flex-end'}}>
+                            <View style={{justifyContent:'flex-end'}}><Text style={{textDecorationLine:'line-through',fontSize:13,fontFamily:'HindMadurai-Regular',paddingBottom:2}}>EGP 199.45</Text></View>
+                            <View style={{flexDirection:'row',columnGap:2,justifyContent:'flex-end'}}>
+                                <View style={{justifyContent:'flex-end'}}><Text style={{color:'black',fontSize:13,fontFamily:'HindMadurai-Regular',paddingBottom:2}}>EGP</Text></View>
+                                <View style={{justifyContent:'flex-end'}}><Text style={{color:'black',fontSize:18,fontFamily:'HindMadurai-SemiBold'}}>9999.45</Text></View>
                             </View>
                         </View>
                     </View>
                     </View>
-                    <View style={{justifyContent:'flex-end',width:70}}>
+                    <View style={{justifyContent:'flex-end',width:80}}>
                         <Pressable style={{flexDirection:'row',backgroundColor:'#F3F3F3',justifyContent:'space-evenly',alignItems:'center',borderRadius:4,height:30}}>
                             <View><Pressable style={{backgroundColor:'white'}}><Image source={require('../../assets/minus.png')} /></Pressable></View>
-                            <View><Text style={{fontWeight:'bold',fontSize:18,color:'black'}}>1</Text></View>
+                            <View><Text style={{fontSize:17,color:'black',fontFamily:'HindMadurai-bold',fontWeight:700}}>1</Text></View>
                             <View><Pressable style={{backgroundColor:'white'}}><Image source={require('../../assets/add.png')}/></Pressable></View>
                         </Pressable>
                     </View>
                 </View>
             </View>
-            <View style={{backgroundColor:'white',margin:'2%',padding:'4%',borderRadius:18,justifyContent:'center'}}>
+            <View style={{backgroundColor:'white',width:(WINDOW_WIDTH*93)/100,padding:'4%',borderRadius:18,justifyContent:'center',alignSelf:'center'}}>
                 { 
                     couponCode === undefined ?
                     <Pressable style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=>onCoupounPress()}>
                         <View style={{flexDirection:'row',justifyContent:'center',columnGap:20}}>
                             <View style={{justifyContent:'center',alignItems:'center'}}><Image source={require('../../assets/coupoun.png')}/></View>
-                            <View><Text style={{color:'black',fontWeight:'bold',fontSize:25,opacity:0.8}}>Use Coupouns</Text></View>
+                            <View><Text style={{color:'black',fontSize:25,fontFamily:'HindMadurai-SemiBold'}}>Use Coupouns</Text></View>
                         </View>
                         <View style={{justifyContent:'center'}}><Image source={require('../../assets/AltArrowRightBlack.png')}/></View>
                     </Pressable> :
@@ -136,58 +145,29 @@ const MainCart = (props)=>{
                     </View>
                 }
             </View>
-            <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:10}}>
-                <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Billing Details</Text></View>
+            <View style={{backgroundColor:'white',width:(WINDOW_WIDTH*93)/100,alignSelf:'center',padding:'2%',borderRadius:18,rowGap:10}}>
+                <View><Text style={{fontSize:22,color:'black',fontFamily:'HindMadurai-Bold'}}>Billing Details</Text></View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Total Items - 2</Text></View>
-                    <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>EGP 198.90</Text></View>
+                    <View><Text style={{color:'black',fontFamily:'HindMadurai-Regular'}}>Total Items - 2</Text></View>
+                    <View><Text style={{color:'black',fontFamily:'HindMadurai-Medium'}}>EGP 198.90</Text></View>
                 </View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Delivery charge</Text></View>
+                    <View><Text style={{color:'black',fontFamily:'HindMadurai-Regular'}}>Delivery charge</Text></View>
                     <View style={{flexDirection:'row',columnGap:10}}>
-                        <View style={{justifyContent:'flex-end'}}><Text style={{color:'black',fontWeight:'bold',opacity:0.5,fontSize:12,textDecorationLine:'line-through'}}>EGP 49.50</Text></View>
-                        <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.8,fontSize:16}}>Free</Text></View>
+                        <View style={{justifyContent:'flex-end'}}><Text style={{textDecorationLine:'line-through',color:'black',fontFamily:'HindMadurai-Regular',fontSize:11}}>EGP 49.50</Text></View>
+                        <View><Text style={{color:'#79A400',fontFamily:'HindMadurai-Medium',}}>Free</Text></View>
                     </View>
                 </View>
                 <View style={{width:'100%',borderWidth:1,borderColor:'#DFDFDF'}}></View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Grand Total</Text></View>
-                    <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>EGP 198.90</Text></View>
+                    <View><Text style={{color:'black',fontFamily:'HindMadurai-Medium'}}>Grand Total</Text></View>
+                    <View><Text style={{color:'black',fontFamily:'HindMadurai-Medium'}}>EGP 198.90</Text></View>
                 </View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.8,fontSize:16}}>Total Savings</Text></View>
-                    <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.8,fontSize:16}}>EGP 249.50</Text></View>
+                    <View><Text style={{color:'#79A400',fontFamily:'HindMadurai-Medium',fontSize:13}}>Total Savings</Text></View>
+                    <View><Text style={{color:'#79A400',fontFamily:'HindMadurai-Medium',fontSize:13}}>EGP 249.50</Text></View>
                 </View>
             </View>
-            <View style={{rowGap:15,paddingVertical:'2%'}}>
-            <View style={{flexDirection:'row',justifyContent:'space-between',paddingHorizontal:'2%'}}>
-                <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center',columnGap:10}}>
-                    <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Similar Products</Text></View>
-                    <View><Image source={require('../../assets/dealOfDayImages/Fire.png')}/></View>
-                </View>
-                <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{color:'#EBA500',fontWeight:'bold',fontSize:17}}>See All</Text></View>
-            </View>
-            <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{columnGap:20,paddingHorizontal:'2%'}}
-                data={DealOfDayList}
-                renderItem={({item})=>
-                    <ProductDetailsCard
-                    isOfferOnProduct={true}
-                    percentOff='15'
-                    CardWidth={(WINDOW_WIDTH*45)/100}
-                    CardHeight='auto'
-                    image={item.image}
-                    productName={item.name}
-                    productWt='500mg'
-                    productPrice='EGP 199.45'
-                    productOfferPrice='EGP 99.45'
-                    onPress={onProductCardPress}
-                    />
-                    }
-                keyExtractor={item=>item.id}
-                />
                 </View>
                 </ScrollView>
                 <View style={{position:'absolute',bottom:0,width:'100%',height:(WINDOW_HEIGHT*10)/100,backgroundColor:'white',justifyContent:'center'}}>

@@ -14,6 +14,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-TestApp-TestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TestApp-TestAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C8E759D575DF491ABF022C93 /* HindMadurai-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E99611D094F4F03AAE7F222 /* HindMadurai-Bold.ttf */; };
+		3A3DD6EEE80C461AA41FEFC7 /* HindMadurai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73822763C65E4942A752B36C /* HindMadurai-Light.ttf */; };
+		DD1085D8FADA496EB46DEFC7 /* HindMadurai-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F661FBA8EDDD492F8F2A165E /* HindMadurai-Medium.ttf */; };
+		183D3263DF784126B799EF11 /* HindMadurai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 777736EB1A05471993957B18 /* HindMadurai-Regular.ttf */; };
+		B6729004DB6244B38F9D36E4 /* HindMadurai-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A08A8C6F8E6D4C519DB18C32 /* HindMadurai-SemiBold.ttf */; };
+		291811D9C4F4431A8E8D68D7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 069BCDA74B824B4FBE4026CF /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TestApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TestApp-TestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-TestAppTests.release.xcconfig"; path = "Target Support Files/Pods-TestApp-TestAppTests/Pods-TestApp-TestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0E99611D094F4F03AAE7F222 /* HindMadurai-Bold.ttf */ = {isa = PBXFileReference; name = "HindMadurai-Bold.ttf"; path = "../src/assets/fonts/HindMadurai-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73822763C65E4942A752B36C /* HindMadurai-Light.ttf */ = {isa = PBXFileReference; name = "HindMadurai-Light.ttf"; path = "../src/assets/fonts/HindMadurai-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F661FBA8EDDD492F8F2A165E /* HindMadurai-Medium.ttf */ = {isa = PBXFileReference; name = "HindMadurai-Medium.ttf"; path = "../src/assets/fonts/HindMadurai-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		777736EB1A05471993957B18 /* HindMadurai-Regular.ttf */ = {isa = PBXFileReference; name = "HindMadurai-Regular.ttf"; path = "../src/assets/fonts/HindMadurai-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A08A8C6F8E6D4C519DB18C32 /* HindMadurai-SemiBold.ttf */ = {isa = PBXFileReference; name = "HindMadurai-SemiBold.ttf"; path = "../src/assets/fonts/HindMadurai-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		069BCDA74B824B4FBE4026CF /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../src/assets/fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				4F699B71EA274546BBC1466C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +160,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		4F699B71EA274546BBC1466C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				0E99611D094F4F03AAE7F222 /* HindMadurai-Bold.ttf */,
+				73822763C65E4942A752B36C /* HindMadurai-Light.ttf */,
+				F661FBA8EDDD492F8F2A165E /* HindMadurai-Medium.ttf */,
+				777736EB1A05471993957B18 /* HindMadurai-Regular.ttf */,
+				A08A8C6F8E6D4C519DB18C32 /* HindMadurai-SemiBold.ttf */,
+				069BCDA74B824B4FBE4026CF /* OFL.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +271,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C8E759D575DF491ABF022C93 /* HindMadurai-Bold.ttf in Resources */,
+				3A3DD6EEE80C461AA41FEFC7 /* HindMadurai-Light.ttf in Resources */,
+				DD1085D8FADA496EB46DEFC7 /* HindMadurai-Medium.ttf in Resources */,
+				183D3263DF784126B799EF11 /* HindMadurai-Regular.ttf in Resources */,
+				B6729004DB6244B38F9D36E4 /* HindMadurai-SemiBold.ttf in Resources */,
+				291811D9C4F4431A8E8D68D7 /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

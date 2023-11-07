@@ -21,8 +21,7 @@ const ProductDetailsCard = (props)=>{
     }
     return(
         <Pressable 
-        style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',elevation:10,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3}} 
-        onPress={()=>props.onPress(props.image,props.productName,props.productPrice,props.productOfferPrice,props.percentOff)}>
+        style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,overflow:'hidden',elevation:15,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:3,marginVertical:5}} >
             {
                 props.isOfferOnProduct ?
                 <View style={{width:'40%',overflow:'hidden'}}>
@@ -33,9 +32,9 @@ const ProductDetailsCard = (props)=>{
                 null
             }
             <View style={{rowGap:14,paddingHorizontal:10,paddingVertical:10}}>
-            <View style={{justifyContent:'center',alignItems:'center'}}>
+            <Pressable style={{justifyContent:'center',alignItems:'center'}} onPress={()=>props.onPress(props.image,props.productName,props.productPrice,props.productOfferPrice,props.percentOff)}>
                 <Image source={props.image}/>
-            </View>
+            </Pressable>
             <View style={{justifyContent:'flex-start'}}>
                 <View>
                     <Text style={{fontWeight:'bold'}}>{props.productName}</Text>
@@ -56,7 +55,7 @@ const ProductDetailsCard = (props)=>{
                 {
                     showCart ?
                     <Pressable style={{backgroundColor:'#FEFAF2',borderColor:'#EBA500',borderRadius:8,borderWidth:0.8}} onPress={()=>setShowCart(false)}>
-                        <Image source={require('../assets/dealOfDayImages/dealcart.png')} style={{width:25,height:25,margin:5}} resizeMode="cover"/>
+                        <Image source={require('../assets/dealOfDayImages/dealcart.png')} style={{width:25,height:25,margin:2.5}} resizeMode="cover"/>
                     </Pressable> :
                     <View style={{flexDirection:'row',justifyContent:'space-evenly',backgroundColor:'#F3F3F3',alignItems:'center',columnGap:10,borderRadius:6,paddingHorizontal:4,paddingVertical:4}}>
                         <View><Pressable onPress={()=>decQty()}><Image source={require('../assets/minus.png')} style={{backgroundColor:'white',width:14,height:14}}/></Pressable></View>

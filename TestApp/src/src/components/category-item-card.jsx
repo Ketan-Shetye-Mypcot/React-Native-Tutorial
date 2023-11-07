@@ -12,7 +12,7 @@ const CategoryItem = (props)=>{
                     <Image source={props.image} style={{width:(WINDOW_WIDTH*25)/100,height:(WINDOW_HEIGHT*12)/100,borderRadius:50,overflow:'hidden',backgroundColor:'#FCF2D9',borderColor:'#FFF6E0',borderWidth:1}}/>
                 </View>
                 <View style={{alignSelf:'center'}}>
-                    <Text style={{fontSize:15,fontWeight:'bold'}}>{props.text}</Text>
+                    <Text style={{fontSize:15,fontWeight:'bold',textTransform:'capitalize'}}>{props.text}</Text>
                 </View>
             </Pressable>:
                 <Pressable onPress={()=>props.onPress(props.id)} style={{rowGap:8,justifyContent:'center',alignItems:'center',width:'100%',backgroundColor:props.id==props.onPressCategoryHighlight ? '#FCF2D9':'white',paddingVertical:5}}>

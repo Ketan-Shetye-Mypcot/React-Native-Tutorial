@@ -44,6 +44,7 @@ const MainHome = (props)=>{
                 image={require('../../assets/dealOfDayImages/Fire.png')}
                 data={DealOfDayList}
                 onPress={onProductCardPress}
+                backgroundColor='white'
                 />
                 <Carausel data={CarauselImages}/>
                 <ProductList

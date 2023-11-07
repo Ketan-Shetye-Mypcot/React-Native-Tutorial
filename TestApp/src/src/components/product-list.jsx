@@ -5,8 +5,8 @@ const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const ProductList=(props)=>{
     return(
-        <View style={{backgroundColor:'white'}}>
-            <View style={{flexDirection:'row',justifyContent:'space-between',paddingHorizontal:20,paddingVertical:20}}>
+        <View style={{backgroundColor:props.backgroundColor}}>
+            <View style={{flexDirection:'row',justifyContent:'space-between',paddingHorizontal:20}}>
                 <View style={{flexDirection:'row',alignItems:'center',columnGap:10}}>
                     <View>
                         <Text style={{fontWeight:'bold',fontSize:18}}>{props.text}</Text>
@@ -22,7 +22,7 @@ const ProductList=(props)=>{
             <FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{columnGap:20,paddingHorizontal:20,paddingVertical:20,backgroundColor:'white'}}
+                contentContainerStyle={{columnGap:20,paddingHorizontal:20,paddingVertical:20,backgroundColor:props.backgroundColor}}
                 data={props.data}
                 renderItem={({item})=>
                     <ProductComponent

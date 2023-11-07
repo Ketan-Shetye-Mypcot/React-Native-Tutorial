@@ -13,6 +13,8 @@ import Coupons from '../src/screens/coupons-screen';
 import CheckOut from '../src/screens/check-out';
 import Address from '../src/screens/address';
 import AddAddress from '../src/screens/add-address';
+import OrderDetails from '../src/screens/order-details';
+import OrderSucess from '../src/screens/order-place-success';
 
 const Stack = createNativeStackNavigator()
 
@@ -60,6 +62,16 @@ const MainAppStack = (props)=>{
                     headerBackVisible:false,
                     headerTitle:()=><Header headerTitle='Add Address' isProductCardDetails={true} onPress={goBackToPrevNavigation}/>
                 }}
+                />
+                <Stack.Screen name='OrderDetails' component={OrderDetails} 
+                options={{
+                    headerShown:true,
+                    headerBackVisible:false,
+                    headerTitle:()=><Header headerTitle='Order Details' isProductCardDetails={true} onPress={goBackToPrevNavigation}/>
+                }}
+                />
+                <Stack.Screen name='OrderSucess' component={OrderSucess} 
+                options={{headerShown:false}}
                 />
 
         </Stack.Navigator>

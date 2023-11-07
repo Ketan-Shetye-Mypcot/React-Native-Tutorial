@@ -109,7 +109,7 @@ const ProductImage=(props)=>{
                 <FlatList
                 ref={ref}
                 data={ProductImgList}
-                initialScrollIndex={highlighIdx}
+                initialScrollIndex={idx}
                 scrollEnabled={false}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -132,7 +132,7 @@ const ProductImage=(props)=>{
             <View style={{height:'15%'}}>
             <FlatList
             ref={refOne}
-            initialScrollIndex={idx}
+            initialScrollIndex={highlighIdx}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 data={ProductImgList}

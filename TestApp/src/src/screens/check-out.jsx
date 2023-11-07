@@ -1,11 +1,13 @@
 import { View,Text,Pressable,Dimensions,ImageBackground,ScrollView,Image } from "react-native";
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import RadioButton from "../components/radio-btn";
+import ChangeAddress from "../components/change-address";
 
 const WINDOW_WIDTH= Dimensions.get('window').width
 const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const CheckOut=(props)=>{
+    const [isAddressSelected,setIsAddressSelected]=useState(true)
     const onBackArrowPress=()=>{
         props.navigation.goBack()
     }
@@ -19,11 +21,17 @@ const CheckOut=(props)=>{
         setCard(true)
         setCOD(false)
     }
-    
+    useEffect(()=>{
+        setSixToSevenAm(true)
+    },[])
     const [sixToSevenAm, setSixToSevenAm]=  useState(false)
     const [eightToNineAm, setEightToNineAm]=  useState(false)
     const [fiveToSixPm, setFiveToSixPm]=  useState(false)
     const [sevenToEightPm, setSevenToEightPm]=  useState(false)
+    const [displayCoupoun,setDisplayCoupoun] =useState(true)
+    const onCoupounCrossPress=()=>{
+        setDisplayCoupoun(false)
+    }
     const onPressSixSeven=()=>{
         setSixToSevenAm(true)
         setEightToNineAm(false)
@@ -51,6 +59,10 @@ const CheckOut=(props)=>{
 
     const onAddAddressPress=()=>{
         props.navigation.navigate('Address');
+        setIsAddressSelected(false)
+    }
+    const onPlaceOrderPress=()=>{
+        props.navigation.navigate('OrderDetails')
     }
     return(
         <View style={{backgroundColor:'#F6F7F2',flex:1}}>
@@ -103,15 +115,24 @@ const CheckOut=(props)=>{
                     </View>
                 </View>
             </View>
+            {
+                displayCoupoun ? 
+
             <View style={{backgroundColor:'white',margin:'2%',padding:'4%',borderRadius:18,justifyContent:'center'}}>
-                <Pressable style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <View style={{flexDirection:'row',justifyContent:'center',columnGap:20}}>
-                        <View style={{justifyContent:'center',alignItems:'center'}}><Image source={require('../assets/coupoun.png')}/></View>
-                        <View><Text style={{color:'black',fontWeight:'bold',fontSize:25,opacity:0.8}}>Use Coupouns</Text></View>
+                
+                    <View style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=>onCoupounPress()}>
+                        <View style={{flexDirection:'row',justifyContent:'center',columnGap:20}}>
+                            <View style={{justifyContent:'center',alignItems:'center'}}><Image source={require('../assets/coupoun.png')}/></View>
+                            <View>
+                            <View><Text style={{color:'black',fontWeight:'bold',fontSize:20,opacity:0.8}}>TRLFOR200</Text></View>
+                            <View><Text>Coupon Applied</Text></View>
+                            </View>
+                        </View>
+                        <Pressable style={{justifyContent:'center'}} onPress={()=>onCoupounCrossPress()}><Image source={require('../assets/yellowCross.png')}/></Pressable>
                     </View>
-                    <View style={{justifyContent:'center'}}><Image source={require('../assets/AltArrowRightBlack.png')}/></View>
-                </Pressable>
-            </View>
+            </View> :
+            null
+            }
             <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:10}}>
                 <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Billing Details</Text></View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
@@ -125,10 +146,15 @@ const CheckOut=(props)=>{
                         <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.8,fontSize:16}}>Free</Text></View>
                     </View>
                 </View>
+                {
+                    displayCoupoun ?
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                     <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Coupoun Discount</Text></View>
                     <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.7,fontSize:16}}>EGP 50</Text></View>
-                </View>
+                </View> :
+                null
+
+                }
                 <View style={{width:'100%',borderWidth:0.7,borderColor:'#DFDFDF'}}></View>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                     <View><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Grand Total</Text></View>
@@ -139,6 +165,8 @@ const CheckOut=(props)=>{
                     <View><Text style={{color:'#79A400',fontWeight:'bold',opacity:0.8,fontSize:16}}>EGP 249.50</Text></View>
                 </View>
             </View>
+            {
+                    isAddressSelected ? 
             <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:20}}>
                 <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Address</Text></View>
                 <View>
@@ -151,7 +179,20 @@ const CheckOut=(props)=>{
                         </View>
                     </Pressable>
                 </View>
+            </View> :
+            <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:20}}>
+                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+            <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Address</Text></View>
+            <Pressable onPress={()=>onAddAddressPress()} style={{flexDirection:'row',columnGap:10}}>
+                <View style={{justifyContent:'center',alignItems:'center'}}><ChangeAddress/></View>
+                <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{color:'#EBA500',fontWeight:'bold'}}>Change Address</Text></View>
+                </Pressable>
+                </View>
+            <View>
+                <Text>C6/7, Vivina Co Op Hsg Ltd, Ma Rd, Andheri(w) Mumbai, Maharashtra</Text>
             </View>
+        </View>
+            }
             <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:20}}>
                 <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Time Slot</Text></View>
                 <View style={{flexDirection:'row',justifyContent:'space-around'}}>
@@ -178,7 +219,7 @@ const CheckOut=(props)=>{
             </View>
             </ScrollView>
             <View style={{position:'absolute',bottom:0,width:'100%',height:(WINDOW_HEIGHT*10)/100,backgroundColor:'white',justifyContent:'center'}}>
-                <Pressable style={{backgroundColor:'#EBA500',margin:'2%',padding:'2%',justifyContent:'center',alignItems:'center',borderRadius:10}} onPress={()=>onCheckOutPress()}>
+                <Pressable style={{backgroundColor:'#EBA500',margin:'2%',padding:'2%',justifyContent:'center',alignItems:'center',borderRadius:10}} onPress={()=>onPlaceOrderPress()}>
                     <Text style={{color:'white',fontWeight:'bold',fontSize:23}}>
                         Place Order
                     </Text>
