@@ -34,16 +34,9 @@ const Brand=()=>{
             <View style={{flexDirection:'row',columnGap:20}}>
                 {
                     item.isChecked ?
-                    <View style={{flexDirection:'row',columnGap:20}}>
-                    <CheckBox isChecked={true} onPress={onCheckBoxPress} CheckBoxId={item.id}/>
-                    <Text style={{color:'#EBA500',fontWeight:'bold',fontSize:15}}>{item.brandby}</Text>
-                    </View>
+                    <CheckBox isChecked={true} onPress={onCheckBoxPress} CheckBoxId={item.id}  brandby={item.brandby}/>
                     :
-                    <View style={{flexDirection:'row',columnGap:20}}>
-                        <CheckBox isChecked={false} onPress={onCheckBoxPress} CheckBoxId={item.id}/>
-                        <Text style={{color:'black',fontWeight:'400'}}>{item.brandby}</Text>
-                    </View>
-
+                    <CheckBox isChecked={false} onPress={onCheckBoxPress} CheckBoxId={item.id} brandby={item.brandby}/>
                 }
             </View>
             }

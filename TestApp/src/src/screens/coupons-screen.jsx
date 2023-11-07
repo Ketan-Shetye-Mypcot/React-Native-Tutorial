@@ -4,8 +4,9 @@ import CoupounList from "./coupoun-cards-details";
 const Coupons = (props)=>{
     const data = props.route.params
     const onApplyPress=(couponsCode)=>{
-        data.changeCouponCode(couponsCode)
-        props.navigation.navigate("BottomTabStack",{screen:'Cart',params:{couponsCode}})
+        // data.changeCouponCode(couponsCode)
+        // props.navigation.navigate("BottomTabStack",{screen:'Cart',params:{couponsCode}})
+        props.navigation.navigate("BottomTabStack",{screen:'Cart'})
     }
     return(
         <View style={{flex:1}}>

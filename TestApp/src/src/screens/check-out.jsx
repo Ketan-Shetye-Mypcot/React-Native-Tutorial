@@ -206,14 +206,12 @@ const CheckOut=(props)=>{
             </View>
             <View style={{backgroundColor:'white',margin:'2%',padding:'2%',borderRadius:18,rowGap:20}}>
                 <View><Text style={{fontWeight:'bold',color:'black',fontSize:20}}>Payment Method</Text></View>
-                <View style={{flexDirection:'row',paddingHorizontal:'2%',columnGap:30}}>
-                    <View style={{flexDirection:'row',columnGap:8}}>
-                        <Pressable style={{justifyContent:'center',alignItems:'center'}}><RadioButton isRadioButtonPressed={COD} itemId={1} onPress={onCODPress}/></Pressable>
-                        <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Cash On Delivery</Text></View>
+                <View style={{flexDirection:'row',paddingHorizontal:'2%',columnGap:50}}>
+                    <View>
+                    <RadioButton isRadioButtonPressed={COD} onPress={onCODPress} itemId={1} sortby='COD' />
                     </View>
-                    <View style={{flexDirection:'row',columnGap:8}}>
-                        <Pressable  style={{justifyContent:'center',alignItems:'center'}}><RadioButton isRadioButtonPressed={card} itemId={2} onPress={onCardPress}/></Pressable>
-                        <View style={{justifyContent:'center',alignItems:'center'}}><Text style={{color:'black',fontWeight:'bold',opacity:0.7,fontSize:16}}>Card</Text></View>
+                    <View>
+                    <RadioButton isRadioButtonPressed={card} onPress={onCardPress} itemId={2} sortby='Card' />
                     </View>
                 </View>
             </View>

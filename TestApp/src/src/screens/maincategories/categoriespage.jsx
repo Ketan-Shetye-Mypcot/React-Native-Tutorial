@@ -8,7 +8,7 @@ import CategoryComponent from '../../components/category-card'
 const CategoryPage = (props)=>{
     const ROUTE_DATA= props.route.params
     const onCategoryPress =(categoryName,categoryId)=>{
-        props.navigation.navigate('CategoryItems')
+        props.navigation.navigate('CategoryItems',{categoryId})
     }
     
     return(

@@ -24,6 +24,7 @@ const MainHome = (props)=>{
     return(
         <View style={{flex:1,backgroundColor:'white'}}>
             <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{rowGap:20}}>
             <FlatList
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -54,6 +55,7 @@ const MainHome = (props)=>{
                 onPress={onProductCardPress}
                 />
                 <NewsLetter/>
+                </View>
             </ScrollView>
             
         </View>

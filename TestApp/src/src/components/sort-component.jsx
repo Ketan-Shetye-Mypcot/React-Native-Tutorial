@@ -16,23 +16,13 @@ const Sort=(props)=>{
             data={SortList}
             contentContainerStyle={{rowGap:20,paddingVertical:20,paddingHorizontal:20}}
             renderItem={({item})=>
-            <View style={{flexDirection:'row',columnGap:20}}>
                 <View>
                     {
                         radioId==item.id?
-                        <RadioButton isRadioButtonPressed={true} onPress={onSortListItemPress} itemId={item.id}/> :
-                        <RadioButton isRadioButtonPressed={false} onPress={onSortListItemPress} itemId={item.id}/>
-                    }
-                    
-                </View>
-                <View>
-                    {
-                        radioId==item.id?
-                        <Text style={{color:'#EBA500',fontWeight:'bold',fontSize:15}}>{item.sortby}</Text>:
-                        <Text style={{color:'black',fontWeight:'400'}}>{item.sortby}</Text>
+                        <RadioButton isRadioButtonPressed={true} onPress={onSortListItemPress} itemId={item.id} sortby={item.sortby} /> :
+                        <RadioButton isRadioButtonPressed={false} onPress={onSortListItemPress} itemId={item.id} sortby={item.sortby}/>
                     }
                 </View>
-            </View>
             }
             keyExtractor={item=>item.id}
         />

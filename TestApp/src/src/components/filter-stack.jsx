@@ -24,23 +24,24 @@ const FilterModal = (props)=>{
         setSortPress(false)
     }
     return(
-        <Modal visible={props.showModal} transparent={true} animationType='slide'>
+        <Modal visible={props.showModal} transparent={true} animationType='slide' >
+            <View style={{flex:1,backgroundColor:'rgba(52, 52, 52, 0.4)'}}>
             <View style={{backgroundColor:'white',width:WINDOW_WIDTH,height:(WINDOW_HEIGHT*70)/100,borderTopLeftRadius:40,borderTopRightRadius:40,bottom:0,position:'absolute'}}>
-                <View style={{width:'100%',height:'20%',borderBottomWidth:1,borderColor:'#F1F1F1',flexDirection:'row'}}>
+                <View style={{width:'100%',height:'20%',borderBottomWidth:3,borderColor:'#F1F1F1',flexDirection:'row'}}>
                     <View style={{width:'50%',height:'100%',justifyContent:'flex-end'}}>
-                        <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:25}}>Filter</Text>
+                        <Text style={{color:'black',fontSize:22,margin:20,fontFamily:'HindMadurai-SemiBold'}}>Filter</Text>
                     </View>
                     <View style={{width:'50%',height:'100%'}}>
                         <Pressable style={{position:'absolute',top:-20,right:10}} onPress={()=>props.onCrossPress()}><Image source={require('../assets/Close.png')}/></Pressable>
                     </View>
                 </View>
                 <View style={{flexDirection:'row',height:'65%'}}>
-                    <View style={{width:'30%',rowGap:20,paddingVertical:20,borderRightWidth:1,borderColor:'#F1F1F1',overflow:'visible'}}>
-                        <Pressable style={{width:'104%',paddingLeft:20,borderRadius:5,borderRightWidth:sortPress?4:0,borderColor:'#EBA500',}} onPress={onSortPress}>
-                            <Text style={{color:sortPress?'#EBA500':'black',fontSize:20,fontWeight:sortPress?'bold':'500'}}>Sort</Text>
+                    <View style={{width:'30%',rowGap:20,paddingVertical:20,borderRightWidth:3,borderColor:'#F1F1F1',overflow:'visible'}}>
+                        <Pressable style={{width:'105%',paddingLeft:20,borderRadius:5,borderRightWidth:sortPress?4:0,borderColor:'#EBA500',}} onPress={onSortPress}>
+                            <Text style={{color:sortPress?'#EBA500':'black',fontSize:20,fontWeight:sortPress?'bold':'500',paddingVertical:5,fontFamily:sortPress?'HindMadurai-Medium':'HindMadurai-Regular'}}>Sort</Text>
                         </Pressable>
-                        <Pressable style={{width:'104%',paddingLeft:20,borderRadius:5,borderColor:'#EBA500',borderRightWidth:brandPress?4:0}} onPress={onBrandPress}>
-                            <Text style={{color:brandPress?'#EBA500':'black',fontSize:20,fontWeight:brandPress?'bold':'500'}}>Brand</Text>
+                        <Pressable style={{width:'105%',paddingLeft:20,borderRadius:5,borderColor:'#EBA500',borderRightWidth:brandPress?4:0}} onPress={onBrandPress}>
+                            <Text style={{color:brandPress?'#EBA500':'black',fontSize:20,fontWeight:brandPress?'bold':'500',paddingVertical:5,fontFamily:brandPress?'HindMadurai-Medium':'HindMadurai-Regular'}}>Brand</Text>
                         </Pressable>
                     </View>
                     <View style={{width:'70%'}}>
@@ -57,12 +58,13 @@ const FilterModal = (props)=>{
                     </View>
                 </View>
                 <View style={{width:'100%',alignItems:'center',justifyContent:'center',height:'15%',alignItems:'center'}}>
-                    <Pressable style={{backgroundColor:'#EBA500',width:'90%',justifyContent:'center',alignItems:'center',borderRadius:8,height:'70%',elevation:20}}>
+                    <Pressable style={{backgroundColor:'#EBA500',width:'90%',justifyContent:'center',alignItems:'center',borderRadius:8,height:'70%'}}>
                         <Text style={{fontWeight:'bold',color:'white',fontSize:20}}>
                             Apply
                         </Text>
                     </Pressable>
                 </View>
+            </View>
             </View>
         </Modal>
     )

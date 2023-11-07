@@ -10,8 +10,8 @@ const WINDOW_WIDTH = Dimensions.get('window').width
 const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const CategoryItems = (props)=>{
-    const [highlightCategory,setHighlightCategory]=useState(0)
     const ROUTE_DATA = props.route.params
+    const [highlightCategory,setHighlightCategory]=useState(1)
     const onCategoryItemPress=(id)=>{
         setHighlightCategory(id)
     }
@@ -22,11 +22,12 @@ const CategoryItems = (props)=>{
     
     return(
         <View style={{flex:1,flexDirection:'row'}}>
-            <View style={{width:(WINDOW_WIDTH*20)/100,height:'100%',elevation:40}}>
+            {/* <View style={{width:(WINDOW_WIDTH*20)/100,height:'100%',elevation:40}}> */}
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={CategoryLsit}
-                    contentContainerStyle={{justifyContent:'center',alignItems:'center',rowGap:20,paddingVertical:20,backgroundColor:'white'}}
+                    contentContainerStyle={{rowGap:10,paddingVertical:10,backgroundColor:'white'}}
+                    style={{flexBasis:'18%'}}
                     renderItem={({item})=>
                     <CategoryItem
                     image={item.image}
@@ -39,18 +40,19 @@ const CategoryItems = (props)=>{
                     }
                     keyExtractor={item=>item.id}
                     />
-            </View>
-            <View style={{width:(WINDOW_WIDTH*80)/100,height:'100%'}}>
+            {/* </View> */}
+            {/* <View style={{width:(WINDOW_WIDTH*80)/100,height:'100%'}}> */}
                 <FlatList
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
                 data={vegies}
-                contentContainerStyle={{rowGap:6,paddingLeft:2.5,paddingVertical:10}}
+                contentContainerStyle={{justifyContent:'center',alignItems:'center',paddingVertical:8}}
+                style={{flexBasis:'82%'}}
                 renderItem={({item})=>
                     <ProductComponent
                     isOfferOnProduct={true}
                     percentOff='15'
-                    CardWidth={(WINDOW_WIDTH*38)/100}
+                    CardWidth={(WINDOW_WIDTH*36)/100}
                     CardHeight='auto'
                     image={item.image}
                     productName={item.name}
@@ -62,7 +64,7 @@ const CategoryItems = (props)=>{
                     }
                 keyExtractor={item=>item.id}
                 />
-            </View>
+            {/* </View> */}
             <Filter/>
         </View>
     )

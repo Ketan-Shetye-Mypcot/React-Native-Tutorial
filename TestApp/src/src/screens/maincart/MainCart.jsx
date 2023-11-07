@@ -7,26 +7,30 @@ const WINDOW_WIDTH= Dimensions.get('window').width
 const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const MainCart = (props)=>{
-    const data = props.route.params
-    const [ couponCode,setCouponCode ] = useState(data.couponsCode)
-    const changeCouponCode=(couponCode)=>{
-        setCouponCode(couponCode)
-    }
+    // const data = props.route.params
+    // const [ couponCode,setCouponCode ] = useState(data.couponsCode)
+    // const changeCouponCode=(couponCode)=>{
+    //     setCouponCode(couponCode)
+    // }
     const onCoupounPress=()=>{
-        props.navigation.navigate('Coupons',{changeCouponCode:changeCouponCode})
+        // props.navigation.navigate('Coupons',{changeCouponCode:changeCouponCode})
+        props.navigation.navigate('Coupons')
     }
     
-    const onCoupounCrossPress=()=>{
-        setCouponCode(undefined)
-    }
+    // const onCoupounCrossPress=()=>{
+    //     setCouponCode(undefined)
+    // }
     
 
+    
     const onProductCardPress=(productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent)=>{
         props.navigation.navigate("ProductCardDetails",{params:{productImage,productName,productOldPrice,ProductCurrPrice,ProductofferPercent}})
     }
 
     const onCheckOutPress=()=>{
-        props.navigation.navigate('CheckOut',{couponCode:couponCode})
+        // props.navigation.navigate('CheckOut',{couponCode:couponCode})
+        props.navigation.navigate('CheckOut')
+
     }
     const onBackArrowPress=()=>{
         props.navigation.navigate('ProductCardDetails',{params:{}})
@@ -124,7 +128,14 @@ const MainCart = (props)=>{
                 </View>
             </View>
             <View style={{backgroundColor:'white',width:(WINDOW_WIDTH*93)/100,padding:'4%',borderRadius:18,justifyContent:'center',alignSelf:'center'}}>
-                { 
+            <Pressable style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=>onCoupounPress()}>
+                        <View style={{flexDirection:'row',justifyContent:'center',columnGap:20}}>
+                            <View style={{justifyContent:'center',alignItems:'center'}}><Image source={require('../../assets/coupoun.png')}/></View>
+                            <View><Text style={{color:'black',fontSize:25,fontFamily:'HindMadurai-SemiBold'}}>Use Coupouns</Text></View>
+                        </View>
+                        <View style={{justifyContent:'center'}}><Image source={require('../../assets/AltArrowRightBlack.png')}/></View>
+                    </Pressable>
+                {/* { 
                     couponCode === undefined ?
                     <Pressable style={{flexDirection:'row',justifyContent:'space-between'}} onPress={()=>onCoupounPress()}>
                         <View style={{flexDirection:'row',justifyContent:'center',columnGap:20}}>
@@ -143,7 +154,7 @@ const MainCart = (props)=>{
                         </View>
                         <Pressable style={{justifyContent:'center'}} onPress={()=>onCoupounCrossPress()}><Image source={require('../../assets/yellowCross.png')}/></Pressable>
                     </View>
-                }
+                } */}
             </View>
             <View style={{backgroundColor:'white',width:(WINDOW_WIDTH*93)/100,alignSelf:'center',padding:'2%',borderRadius:18,rowGap:10}}>
                 <View><Text style={{fontSize:22,color:'black',fontFamily:'HindMadurai-Bold'}}>Billing Details</Text></View>
