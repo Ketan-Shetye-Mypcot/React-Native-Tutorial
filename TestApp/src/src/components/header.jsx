@@ -13,13 +13,17 @@ const Header = (props)=>{
                 props.isBottomTabNavigationPage?
                 <View style={{rowGap:20}}>
                 <View style={styles.headerTextLanguageChangeContainer}>
-                    <View style={{width:'80%',alignItems:'center'}}>
+                    <View style={{width:'90%',alignItems:'center'}}>
                         <Text style={styles.headerText}>{props.headerTitle}</Text>
                     </View>
-                    <View style={{width:'20%',alignItems:'flex-end'}}>
+                    <View style={{width:'10%',alignItems:'flex-end'}}>
                         <Pressable style={styles.stylePressable} >
+                            <View style={{justifyContent:'center'}}>
                             <Image source={require('../assets/translating.png')} style={styles.pressableImg}/>
+                            </View>
+                            <View style={{justifyContent:'center',alignItems:'center',paddingTop:2}}>
                             <Text style={styles.stylePressableText}>EN</Text>
+                            </View>
                         </Pressable>
                     </View>
                 </View>
@@ -33,12 +37,12 @@ const Header = (props)=>{
                 props.isCategoryItemPage?
                 <View style={{width:'100%',justifyContent:'center',rowGap:20,height:150}}>
                 <View style={{width:'100%',flexDirection:'row'}}>
-                    <View style={{width:'30%',justifyContent:'center'}}>
+                    <View style={{width:'5%',justifyContent:'center'}}>
                         <Pressable onPress={()=>props.onPress()} >
                             <Image source={require('../assets/ArrowLeft.png')} />
                         </Pressable>
                     </View>
-                    <View style={{width:'70%'}}>
+                    <View style={{width:'80%',justifyContent:'center',alignItems:'center'}}>
                         <Text style={{fontWeight:'bold',fontSize:25,fontStyle:'italic'}}>{props.headerTitle.toUpperCase()}</Text>
                     </View>
                 </View>
@@ -50,17 +54,15 @@ const Header = (props)=>{
             }
             {
                 props.isProductCardDetails?
-                <View style={{width:'100%',justifyContent:'center',rowGap:20,height:50}}>
-                <View style={{width:'100%',flexDirection:'row'}}>
-                    <View style={{width:'30%',justifyContent:'center'}}>
+                <View style={{flexDirection:'row'}}>
+                    <View style={{width:'0%',justifyContent:'center',overflow:'visible'}}>
                         <Pressable onPress={()=>props.onPress()} >
                             <Image source={require('../assets/ArrowLeft.png')} />
                         </Pressable>
                     </View>
-                    <View style={{width:'70%'}}>
-                        <Text style={{fontWeight:'bold',fontSize:25,fontStyle:'italic',color:'black',textTransform:'capitalize'}}>{props.headerTitle}</Text>
+                    <View style={{width:'100%',alignItems:'center',justifyContent:'center',paddingRight:20}}>
+                        <Text style={{fontWeight:'bold',fontSize:25,color:'black',textTransform:'capitalize',fontFamily:'HindMadurai-Medium'}}>{props.headerTitle}</Text>
                     </View>
-                </View>
                 </View> :
                 null
             }
@@ -90,11 +92,13 @@ const styles = StyleSheet.create({
     },
     stylePressableText:{
         fontWeight:'bold',
-        textDecorationLine:'underline',
         fontSize:20,
         fontWeight:'500',
         color:'#272727',
-        paddingHorizontal:5
+        paddingHorizontal:5,
+        borderBottomWidth:2,
+        fontFamily:'HindMadurai-Medium',
+        borderColor:'#5D5D5D'
     },
     searchTextBoxContainer:{
         // marginVertical:16

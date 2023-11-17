@@ -1,11 +1,12 @@
 import { View, Text, Image, Pressable, ImageBackground,Dimensions } from "react-native";
 import {useState} from 'react'
+import ProductWtModal from "./ProductWtModal";
 const WINDOW_WIDTH= Dimensions.get('window').width
 const WINDOW_HEIGHT = Dimensions.get('window').height
 
 const ProductComponent = (props)=>{
     const[ showCart,setShowCart] = useState(true)
-
+    const [showProductWtModal,setShowProductWtModal] = useState(false)
     
 
     const [qty,setQty] = useState(1)
@@ -19,6 +20,9 @@ const ProductComponent = (props)=>{
             setQty(qty-1)
         }
     }
+    const onProductWtPress=()=>{
+        setShowProductWtModal(true)
+    }
     return(
         <View 
         style={{backgroundColor:'white',width:props.CardWidth,height:props.CardHeight,shadowColor: 'black',elevation:3,borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTopRightRadius:8,marginHorizontal:6,marginVertical:7}}>
@@ -31,6 +35,7 @@ const ProductComponent = (props)=>{
                 </View> :
                 null
             }
+            <ProductWtModal visible={showProductWtModal}/>
             <View style={{rowGap:14,paddingHorizontal:10,paddingVertical:10}}>
             <Pressable style={{justifyContent:'center',alignItems:'center'}} onPress={()=>props.onPress(props.image,props.productName,props.productPrice,props.productOfferPrice,props.percentOff)}>
                 <Image source={props.image}/>
@@ -39,9 +44,9 @@ const ProductComponent = (props)=>{
                 <View>
                     <Text style={{fontWeight:'bold'}}>{props.productName}</Text>
                 </View>
-                <View>
+                <Pressable onPress={onProductWtPress}>
                     <Text>{props.productWt}</Text>
-                </View>
+                </Pressable>
             </View>
             <View style={{flexDirection:'row',justifyContent:'space-between',width:'100%',height:(WINDOW_HEIGHT*5)/100}}>
                 <View style={{width:'50%',justifyContent:'flex-start',alignItems:'center',flexDirection:'row'}}>
