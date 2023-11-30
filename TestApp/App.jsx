@@ -6,6 +6,8 @@ import Login from "./firebasesrc/login";
 import messaging from '@react-native-firebase/messaging'
 import notifee, { EventType } from '@notifee/react-native';
 import Home from "./firebasesrc/home";
+import dynamicLinks from '@react-native-firebase/dynamic-links'
+
 
 const Stack = createNativeStackNavigator()
 
@@ -46,6 +48,32 @@ const App=()=> {
     }
   })
 
+  const handleDynamicLink = link => {
+    // Handle dynamic link inside your own application
+    if (link && link.url === 'https://ketanshetye.netlify.app/') {
+          navigationRef.current.navigate('Login');
+        }else{
+          navigationRef.current.navigate('Home');
+        }
+  };
+
+  useEffect(() => {
+    const unsubscribe = dynamicLinks().onLink(handleDynamicLink);
+    // When the component is unmounted, remove the listener
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    dynamicLinks()
+      .getInitialLink()
+      .then(link => {
+        if (link && link.url === 'https://ketanshetye.netlify.app/') {
+          navigationRef.current.navigate('Register');
+        }else{
+          navigationRef.current.navigate('Home');
+        }
+      });
+  }, []);
   return(
     <NavigationContainer ref={navigationRef} >
       <Stack.Navigator>
