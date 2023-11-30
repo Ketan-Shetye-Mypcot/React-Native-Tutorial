@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "849619049407",
+    "project_id": "fir-learn-ab63c",
+    "storage_bucket": "fir-learn-ab63c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849619049407:android:b4ab008c020ac3f0271f0a",
+        "android_client_info": {
+          "package_name": "com.testapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ANDEhy1O9bLR_k21Yt1i6m3tx1o5Zbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
